@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dmlock-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: db123456
+      MYSQL_DATABASE: db_dmlock
+    ports:
+      - '6392:3306'
+    volumes:
+      - ./.cache/data/db:/var/lib/mysql/
+    restart: always
